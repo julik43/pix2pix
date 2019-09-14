@@ -18,7 +18,7 @@ Para este proyecto se utilizaron dos bases de datos, una para carros y otra para
 
 Para el proceso de segmentación que se describe a continuación, se hace uso de la red descrita en: https://github.com/tensorflow/models/blob/master/research/deeplab/deeplab_demo.ipynb
 
-##Proceso descargar y preprocesar la base de datos de carros con segmentación
+#Proceso descargar y preprocesar la base de datos de carros con segmentación
 1. Descargar [Stanford Cars Dataset](https://www.kaggle.com/jessicali9530/stanford-cars-dataset) train only
 2. Unzip train Stanford Cars Dataset
 3. Instalar awscli
@@ -35,7 +35,7 @@ Para el proceso de segmentación que se describe a continuación, se hace uso de
   11.3 Make: cp cars-mask.scm ~/.gimp-2.8/scripts/
   11.4 Aplicar filtros a todas las imágenes que funcionarán como entrada para la red: find open_images_cars_in/ -iname '*.jpg' -exec gimp -i -b '(cars-mask "{}" 1 1 0 50.0 0.9)' -b '(gimp-quit 0)' \;
 
-##Proceso descargar y preprocesar la base de datos de carros sin segmentación
+#Proceso descargar y preprocesar la base de datos de carros sin segmentación
 1. Descargar [Stanford Cars Dataset](https://www.kaggle.com/jessicali9530/stanford-cars-dataset) train only
 2. Unzip train Stanford Cars Dataset
 3. Instalar awscli
@@ -51,7 +51,7 @@ Para el proceso de segmentación que se describe a continuación, se hace uso de
   9.4 Aplicar filtros a todas las imágenes que funcionarán como entrada para la red: find open_images_cars_in/ -iname '*.jpg' -exec gimp -i -b '(cars-mask "{}" 1 1 0 50.0 0.9)' -b '(gimp-quit 0)' \;
 
 
-##Proceso descargar y preprocesar la base de datos de paisajes
+#Proceso descargar y preprocesar la base de datos de paisajes
 1. Descargar [Landscape Pictures](https://www.kaggle.com/arnaud58/landscape-pictures).
 2. Unzip Landscape Pictures en landscape_out
 3. Redimensionar las imágenes usando: find landscape_out/ -iname '*.jpg' -exec convert \{} -verbose -resize 512x512\> \{} \; 
@@ -74,8 +74,12 @@ python pix2pix_1.py --inpath "./train_input" --outpath './train_desired_output' 
 # Como usar el proyecto para hacer una prueba
 
 Para probar estos modelos se debe de contar con dos ambientes virtuales:
-  * Para correr pix2pix: 
-  * Para correr enhancenet.py
+  * Para correr pix2pix: tf_1_14_p_2_7.yml
+  * Para correr enhancenet.py : tf_2_p_3.yml
+
+  Para crear los ambientes virtuales anteriormente descritos se usa el comando:
+
+  conda env create -f environment.yml
 
 Una vez que se cumpla con los requisitos de software, se deben descargar los pesos de las redes disponibles en:
   * [Cars not segmented](https://drive.google.com/open?id=1GrjgkWxGiSLNjgdk-szl2jPi5ga0o85F)
@@ -91,7 +95,7 @@ bash run.sh
 este hará que todas las imágenes dentro de los folders image_to_pred_car_segmented, image_to_pred_car_not_segmented e image_to_pred_landscape sean tratadas por la red y se genere una salida por cada imagen en los folders image_predicted_car_segmented, image_predicted_car_not_segmented e image_predicted_landscape. Posteriormente se realiza el proceso de mejora de la imagen lo que genera salidas en una dimensión 4 veces mayor en los folders enhance_image_car_segemented, enhance_image_car_not_segemented y enhance_image_landscapes.
 
 
-## El bash consiste en:
+# El bash consiste en:
 
 Activar el ambiente virtual para correr el modelo pix2pix:
 
@@ -118,6 +122,14 @@ Desactivar el ambiente virtual
 
 # Resultados
 
-# Generación de carros
+Generación de carros segmentados
+![](./gifs/car_segmented_1.gif)
+![](./gifs/car_segmented_2.gif)
 
-# Generación de paisajes
+Generación de carros no segmentados
+![](./gifs/car_not_segmented_1.gif)
+![](./gifs/car_not_segmented_2.gif)
+
+Generación de paisajes
+![](./gifs/landscape_1.gif)
+![](./gifs/landscape_2.gif)

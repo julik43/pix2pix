@@ -1,0 +1,10 @@
+name: tf_1_14_p_2_7
+channels:
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - ca-certificates=2019.5.15=1
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - openssl=1.1.1d=h7b6447c_1
+prefix: /home/ar/anaconda2/envs/tf_1_14_p_2_7
+
