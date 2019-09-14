@@ -123,13 +123,19 @@ Desactivar el ambiente virtual
 # Resultados
 
 Generación de carros segmentados
+
 ![](./gifs/car_segmented_1.gif)
+
 ![](./gifs/car_segmented_2.gif)
 
 Generación de carros no segmentados
+
 ![](./gifs/car_not_segmented_1.gif)
+
 ![](./gifs/car_not_segmented_2.gif)
 
 Generación de paisajes
+
 ![](./gifs/landscape_1.gif)
+
 ![](./gifs/landscape_2.gif)
