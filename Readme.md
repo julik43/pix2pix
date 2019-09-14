@@ -120,7 +120,22 @@ python2.7 enhancenet.py --path_input './image_predicted_landscape' --path_output
 Desactivar el ambiente virtual
 
 
-# Resultados
+# Resultados visuales
+
+Generación de carros segmentados
+
+![](./results/c_sg_image_big.png)
+
+Generación de carros no segmentados
+
+![](./results/c_not_sg_image_big.png)
+
+Generación de paisajes
+
+![](./results/landscape_image_big.png)
+
+
+# Resultados gif evolutivo
 
 Generación de carros segmentados
 
