@@ -120,6 +120,9 @@ python2.7 enhancenet.py --path_input './image_predicted_landscape' --path_output
 Desactivar el ambiente virtual
 
 
+# Resultados
+Nota importante: en los folders image_predicted hay resultados de imágenes generadas con dibujos hechos a mano.
+
 # Resultados visuales
 
 Generación de carros segmentados
